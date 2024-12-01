@@ -7,6 +7,8 @@ import com.eventostec.api.domain.event.Event;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Table(name = "address")
@@ -21,5 +23,7 @@ public class Address {
 	
 	private String uf;
 	
+	@ManyToOne
+	@JoinColumn(name = "evento_id")
 	private Event event;
 }
